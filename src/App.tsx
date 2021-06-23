@@ -4,19 +4,23 @@
 import { Home } from './pages/Home';
 import './styles/global.scss';
 import {NewRoom} from './pages/NewRoom';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 //import firebase from 'firebase';
 //import { auth } from './services/firebase';
 
 import {AuthContextProvider} from './contexts/AuthContexts';
+import { Room } from './pages/Room';
 
 function App() {
 
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        <Route path="/" exact component={Home} />
-        <Route path="/rooms/new" component={NewRoom} />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/rooms/new" component={NewRoom} />
+          <Route path="/rooms/:id" component={Room} />
+        </Switch>
       </AuthContextProvider>
     </BrowserRouter>
     
