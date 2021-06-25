@@ -7,10 +7,12 @@ import { Button } from '../components/Button';
 import {database} from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
 import { FormEvent, useState } from 'react';
+import { useTheme } from '../hooks/useTheme';
 
 export function Home(){
   const history = useHistory();
   const {user, signInWithGoogle} = useAuth()
+  const {theme, toggleTheme} = useTheme()
   const [roomCode, setRoomCode] = useState('');
 
   async function handleCreateRoom(){
@@ -43,7 +45,7 @@ export function Home(){
   }
 
   return (
-    <div id="page-auth">
+    <div id="page-auth" className={theme}>
       <aside>
         <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -51,6 +53,7 @@ export function Home(){
       </aside>
       <main>
         <div className="main-content">
+          <button onClick={toggleTheme}>Mudar tema</button>
           <img src={logoImg} alt="Letmeask" />
           <button className="create-room" onClick={handleCreateRoom}>
             <img src={googleIconImg} alt="Logo do Google" />

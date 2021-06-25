@@ -3,9 +3,13 @@
   align-items: stretch;
   height: 100vh;
 
+  &.dark {
+    background: #333;
+  }
+
   aside{
     flex: 7;
-    background: #835afd;
+    background-image: linear-gradient(325deg, #ff00e2 0, #e800dc 16.67%, #c400d4 33.33%, #9f00c7 50%, #790ab9 66.67%, #5411ab 83.33%, #28149e 100%);
     color: #fff;
 
     display: flex;
@@ -99,7 +103,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
+      border-radius: 30px;
       cursor: pointer;
       border: 0;
 

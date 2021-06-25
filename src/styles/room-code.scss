@@ -1,16 +1,27 @@
 .room-code {
   height: 40px;
-  border-radius: 8px;
+  
+  //border: 3px solid;
+  //border-image: linear-gradient(45deg, #7e00be, #d033d2) 3;
+  //border-radius: 8px;
   overflow: hidden;
 
+  border: double 1px transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(white, white);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+
   background: #FFF;
-  border: 1px solid #835afd;
+  
+  
 
   cursor: pointer;
   display: flex;
 
   div {
-    background: #835afd;
+    background-image: linear-gradient(30deg, #d033d2 0, #b820cc 25%, #9c01c5 50%, #7e00be 75%, #5d00b8 100%);
     padding: 0 12px;
     display: flex;
     justify-content: center;
