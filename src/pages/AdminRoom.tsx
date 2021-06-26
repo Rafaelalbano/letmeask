@@ -59,7 +59,7 @@ export function AdminRoom(){
 
   return (
     <div id="page-room" className={theme}>
-      <header>
+      <header className={theme}>
         <div className="content">
           <img src={logoImg} alt="Letmeask" />
           <button className="toggle-button" onClick={toggleTheme}>Tema {theme}</button>
@@ -71,7 +71,7 @@ export function AdminRoom(){
       </header>
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <h1>Sala {title}, <p>Copie o código de sua sala e passe para sua audiência para começar!</p></h1>
           { questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
         <div className="question-list">

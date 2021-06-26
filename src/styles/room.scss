@@ -1,12 +1,25 @@
 #page-room {
   header {
-    padding: 24px;
+    padding: 15px;
     border-bottom: 1px solid #e2e2e2;
+    width: 100%;
+
+    &.dark {
+      background: #FFF;
+    }
   }
 
+      
   &.dark {
     background: rgb(19, 19, 19);
     color: #FFF;
+    height: 100vh;
+    
+
+    &.dark h1{
+        color: #FFF;   
+    }
+  }
 
     .content {
       max-width: 1128px;
@@ -17,14 +30,17 @@
     
 
       .toggle-button {
-        color:#000;
+        color:#e559f9;
         height: 30px;
+        width: 120px;
         font: 600 10px 'Poppins', sans-serif;
         margin-top: 30px;
         border-radius: 30px;
         cursor: pointer;
         background-color: #FFF;
-        border: 2px solid #000;
+        border: 2px solid #e559f9;
+        margin-top: 0px;
+
   
         &:hover{
           color: #FFF;
@@ -46,31 +62,42 @@
         }
       }
     }
-  }
+
 
   main {
     max-width: 800px;
     margin: 0 auto;
+
+
 
     .room-title {
       margin: 32px 0 24px;
       display: flex;
       align-items: center;
 
+
+
       h1{
         font-family: 'Poppins', sans-serif;
         font-size: 24px;
         color: #29292e;
+
       }
 
       span{
-        margin-left: 16px;
+        margin-left: 150px;
         background: #e559f9;
         border-radius: 9999px;
         padding: 8px 16px;
         color: #FFF;
         font-weight: 500;
         font-size: 14px;
+
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 400;
       }
     }
 
@@ -85,13 +112,15 @@
         resize: vertical;
         min-height: 130px;
       }
+      &.dark textarea{
+        box-shadow: 0 2px 12px rgba(255, 255, 255, 0.4);
+      } 
 
-      
       .form-footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 16px;
+        margin-top: 16px;      
 
         .user-info {
           display: flex;
@@ -108,6 +137,10 @@
             color: #29292e;
             font-weight: 500;
             font-size: 14px;
+
+            &.dark {
+              color: #FFF;
+            }
           }
         }
 
@@ -115,7 +148,7 @@
           font-size: 14px;
           color: #737380;
           font-weight: 500;
-
+          
           button {
             background: transparent;
             border: 0;
@@ -123,6 +156,7 @@
             text-decoration: underline;
             font-weight: 500;
             font-size: 14px;
+            cursor: pointer;
           }
         }
       }
@@ -130,7 +164,5 @@
     .question-list {
       margin-top: 32px;
     }
-
-
   }
 }

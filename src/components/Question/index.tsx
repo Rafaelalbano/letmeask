@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useTheme } from '../../hooks/useTheme';
 
 import './styles.scss';
 
@@ -21,6 +22,9 @@ export function Question({
   isHighlighted = false,
   children,
 }: QuestionProps){
+
+  const {theme, toggleTheme} = useTheme()
+  
   return (
     <div className={`question ${isAnswered ? 'answered' : ''} ${isHighlighted ? 'highlighted' : ''}`}>
       <p>{content}</p>
