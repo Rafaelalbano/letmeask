@@ -7,9 +7,15 @@ import { Button } from '../components/Button';
 import {Link, useHistory} from 'react-router-dom';
 import { database } from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
+
+type userNameType = {
+  user: string | undefined;
+}
 
 export function NewRoom(){
   const {user} = useAuth();
+  const {theme, toggleTheme} = useTheme()
   const history = useHistory();
   const [newRoom, setNewRoom] = useState('');
 
@@ -30,7 +36,7 @@ export function NewRoom(){
   }
 
   return (
-    <div id="page-auth">
+    <div id="page-auth" className={theme}>
       <aside>
         <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -39,6 +45,8 @@ export function NewRoom(){
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
+          <button className="toggle-button" onClick={toggleTheme}>Tema {theme}</button>
+          <h2 className="show-name">Bem vindo(a), {user?.name}</h2>
           <h2>Criar uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
             <input 

@@ -52,9 +52,9 @@ export function Home(){
         <p>Tire as dúvidas da sua audiência em tempo-real.</p>
       </aside>
       <main>
-        <div className="main-content">
-          <button onClick={toggleTheme}>Mudar tema</button>
+        <div className="main-content">  
           <img src={logoImg} alt="Letmeask" />
+          <button className="toggle-button" onClick={toggleTheme}>Tema {theme}</button>
           <button className="create-room" onClick={handleCreateRoom}>
             <img src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google

@@ -2,6 +2,11 @@
   header {
     padding: 24px;
     border-bottom: 1px solid #e2e2e2;
+  }
+
+  &.dark {
+    background: rgb(19, 19, 19);
+    color: #FFF;
 
     .content {
       max-width: 1128px;
@@ -9,6 +14,24 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    
+
+      .toggle-button {
+        color:#000;
+        height: 30px;
+        font: 600 10px 'Poppins', sans-serif;
+        margin-top: 30px;
+        border-radius: 30px;
+        cursor: pointer;
+        background-color: #FFF;
+        border: 2px solid #000;
+  
+        &:hover{
+          color: #FFF;
+          transition: 0.2s ease-in;
+          background: #000;
+        }
+      } 
 
       > img {
         max-height: 45px;

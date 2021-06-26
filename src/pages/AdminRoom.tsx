@@ -12,6 +12,7 @@ import deleteImg from '../assets/images/delete.svg';
 import { database } from '../services/firebase';
 import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg';
+import { useTheme } from '../hooks/useTheme';
 
 
 
@@ -24,6 +25,7 @@ type RoomParms = {
 export function AdminRoom(){
   //const { user } = useAuth();
   const history = useHistory()
+  const {theme, toggleTheme} = useTheme()
   const params = useParams<RoomParms>();
   const roomId = params.id;
 
@@ -56,10 +58,11 @@ export function AdminRoom(){
   }
 
   return (
-    <div id="page-room">
+    <div id="page-room" className={theme}>
       <header>
         <div className="content">
           <img src={logoImg} alt="Letmeask" />
+          <button className="toggle-button" onClick={toggleTheme}>Tema {theme}</button>
           <div>
             <RoomCode code={roomId}/>
             <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>

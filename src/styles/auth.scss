@@ -4,7 +4,8 @@
   height: 100vh;
 
   &.dark {
-    background: #333;
+    background: rgb(19, 19, 19);
+    color: #FFF;
   }
 
   aside{
@@ -54,14 +55,40 @@
     align-items: stretch;
     text-align: center;
 
+    .toggle-button {
+      color:#000;
+      height: 30px;
+      font: 600 10px 'Poppins', sans-serif;
+      margin-top: 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #FFF;
+      border: 2px solid #000;
+
+      &:hover{
+        color: #FFF;
+        transition: 0.2s ease-in;
+        background: #000;
+      }
+      
+    }
+
     > img{
       align-self: center;
+
+      &.dark .logo-fill {
+        fill: white;
+      }
     }
 
     h2{
       font-size: 24px;
-      margin: 64px 0 24px;
+      margin: 20px 0 24px;
       font-family: 'Poppins', sans-serif;
+
+      &.dark h2{
+        color: #FFF;
+      }
     }
 
     form{
@@ -85,6 +112,10 @@
       font-size: 14px;
       color: #737380;
       margin-top: 16px;
+      
+      &.dark p {
+        color: #FFF;
+      }
 
       a{
         color: #e559f9;
@@ -93,7 +124,7 @@
     }
   
     .create-room{
-      margin-top: 64px;
+      margin-top: 20px;
       height: 50px;
       border-radius: 8px;
       font-weight: 500;
@@ -142,6 +173,10 @@
         background: #a8a8b3;
         margin-left: 16px;
       }
+    }
+
+    .show-name {
+      font-size: 16px;
     }
   }
 }
