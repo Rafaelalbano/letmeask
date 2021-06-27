@@ -1,6 +1,4 @@
-
 import { FormEvent } from 'react';
-//import { useEffect } from 'react';
 import { useState } from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 import logoImg from '../assets/images/logo.svg';
